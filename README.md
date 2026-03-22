@@ -1,24 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## ASTRASENSE – AI Powered Environmental Risk Detection Dashboard
+
+ASTRASENSE is a modern, multi-page **environmental intelligence** web app that simulates satellite-derived indices (NDVI, NDWI, LST, EVI) and produces **AI-style hazard risk predictions** (flood, drought, vegetation stress, land degradation) with interactive visualization.
 
 ## Getting Started
 
-First, run the development server:
+### 1) Configure environment
+
+Create `.env.local`:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+OPENCAGE_API_KEY=your_opencage_key_here
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can copy from `.env.example`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2) Install + run
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+## Key features
+
+- **Home**: global search with autocomplete (OpenCage) + 3D globe
+- **Dashboard**: indicator cards, AI risk panel, alerts, and analytics charts
+- **Map Analysis**: MapLibre map with street/satellite toggle and hazard heatmap overlays
+- **Alert Center**: severity filters and animated alert cards
+- **About**: explanation of indices + simulated model workflow
+
+## API routes
+
+- `GET /api/geocode?q=...`: OpenCage proxy (keeps API key server-side)
+- `GET /api/simulate?lat=...&lng=...&days=...`: simulated indices + hazards + alerts + trends + hotspots
+
+## Notes
+
+- This is a **simulation demo** (not a real satellite ingestion pipeline).
+- Satellite map tiles use a public raster service for demo purposes.
 
 ## Learn More
 

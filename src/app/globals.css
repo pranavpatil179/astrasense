@@ -1,26 +1,55 @@
 @import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --app-bg: #070a12;
+  --app-fg: #e8eefc;
+  --muted-fg: rgba(232, 238, 252, 0.68);
+  --panel-bg: rgba(255, 255, 255, 0.06);
+  --panel-border: rgba(255, 255, 255, 0.12);
+  --accent-cyan: #22d3ee;
+  --accent-emerald: #34d399;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-app: var(--app-bg);
+  --color-app-foreground: var(--app-fg);
+  --color-muted-foreground: var(--muted-fg);
+  --color-panel: var(--panel-bg);
+  --color-panel-border: var(--panel-border);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-emerald: var(--accent-emerald);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: var(--app-bg);
+  color: var(--app-fg);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.bg-app {
+  background-color: var(--app-bg);
+}
+
+.text-app-foreground {
+  color: var(--app-fg);
+}
+
+.bg-app-gradient {
+  background:
+    radial-gradient(1100px 500px at 15% 10%, rgba(34, 211, 238, 0.15), transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, rgba(52, 211, 153, 0.12), transparent 55%),
+    radial-gradient(700px 400px at 50% 90%, rgba(99, 102, 241, 0.10), transparent 60%),
+    linear-gradient(180deg, rgba(7, 10, 18, 1), rgba(7, 10, 18, 1));
+}
+
+.bg-app-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(600px 320px at 50% 20%, black 40%, transparent 75%);
 }
