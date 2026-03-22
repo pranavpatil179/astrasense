@@ -3,7 +3,7 @@ ASTRASENSE is a modern, interactive web application designed for **hyperlocal en
 The platform pairs statistical data visualizations with an interactive 3D globe and localized mapping interfaces, serving as a comprehensive dashboard for environmental monitoring.
 ---
 ## 🌐 Live Deployment
-**View the live application here:** [Your Deployment Link Here](https://astrasense.vercel.app/)
+**View the live application here:** (https://astrasense-app.vercel.app)
 ---
 ## 🚀 Interactive Features & Pages
 *   **Home & 3D Globe (`/`):** A stunning landing page featuring an interactive 3D globe (`GlobalGlobe` component). Users can search for any location worldwide using an autocomplete location search (powered by the OpenCage Geocoder).
